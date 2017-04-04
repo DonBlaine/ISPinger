@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ISPinger</string>
+    <string name="settings1">Start Time</string>
+    <string name="settings2">Stop Time</string>
+    <string name="settings3">Use With Wifi Only?</string>
+    <string name="settings4">Set Time</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="Settings">Settings</string>
+    <string name="Status">App Status</string>
+    <string name="On">ON</string>
+    <string name="Off">OFF</string>
+    <string name="about">About</string>
+
+</resources>
