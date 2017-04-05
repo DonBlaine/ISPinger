@@ -40,7 +40,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/alarmBtn"
             android:onClick="turnOn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
