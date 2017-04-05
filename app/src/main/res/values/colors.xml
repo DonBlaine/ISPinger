@@ -11,4 +11,5 @@
     <color name="backgroundblue">#d1f2ff</color>
     <color name="lightred">#FA5252</color>
     <color name="green">#4fef72</color>
+    <color name="opaquewhite">#fcfcfc</color>
 </resources>

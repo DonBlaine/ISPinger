@@ -11,5 +11,7 @@
     <string name="On">ON</string>
     <string name="Off">OFF</string>
     <string name="about">About</string>
+    <string name="goHome">Home</string>
+
 
 </resources>

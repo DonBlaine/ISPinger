@@ -12,6 +12,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:orientation="vertical"
+        android:background="@color/opaquewhite"
         android:weightSum="1"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -51,6 +52,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="goSettings"
             android:textSize="20sp"
             android:background="@drawable/roundedbutton"
             android:text="@string/Settings"

@@ -14,6 +14,7 @@
         android:paddingBottom="20dp"
         android:paddingRight="16dp"
         android:orientation="vertical"
+        android:background="@color/opaquewhite"
         android:weightSum="1"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -31,6 +32,7 @@
         android:layout_marginRight="8dp">
 
         <TextView
+            android:id="@+id/startTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings1"
@@ -40,8 +42,10 @@
             android:textColor="@color/black"/>
 
         <Button
+            android:id="@+id/startBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onStartBtn"
             android:text="@string/settings4"
             android:background="@drawable/roundedbutton"
             android:layout_marginBottom="20dp"
@@ -50,6 +54,7 @@
 
 
         <TextView
+            android:id="@+id/stopTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings2"
@@ -59,27 +64,41 @@
             android:textColor="@color/black"/>
 
         <Button
+            android:id="@+id/stopBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onStopBtn"
             android:textSize="20sp"
             android:background="@drawable/roundedbutton"
             android:text="@string/settings4"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="20dp"
             android:padding="20dp"/>
 
 
         <android.support.v7.widget.SwitchCompat
             android:id="@+id/simpleSwitch"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.19"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.23"
             android:checked="true"
             android:padding="5dp"
             android:text="@string/settings3"
             android:textOff="@string/No"
             android:textOn="@string/Yes"
             android:textSize="20sp"
-            app:showText="true" />
+            app:showText="true"
+            tools:ignore="InefficientWeight" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedbutton"
+            android:onClick="goHome"
+            android:padding="20dp"
+            android:text="@string/goHome"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
