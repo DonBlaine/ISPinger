@@ -31,6 +31,10 @@ public class Selections extends AppCompatActivity {
         TimePicker(flag);
     }
 
+    public void turnOn(){
+
+    }
+
     public void TimePicker(int flag){
         DialogFragment newFragment = new TimePickerFragment();
         Bundle args = new Bundle();

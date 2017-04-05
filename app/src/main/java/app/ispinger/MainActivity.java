@@ -18,4 +18,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Selections.class);
         startActivity(intent);
     }
+
+    public void goAbout(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, About.class);
+        startActivity(intent);
+    }
 }

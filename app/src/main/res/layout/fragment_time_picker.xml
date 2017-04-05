@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     tools:context="app.ispinger.TimePickerFragment">
 
+    <!--fragment isn't used other than to provide context for the timepicker.-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

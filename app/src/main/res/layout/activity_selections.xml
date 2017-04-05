@@ -84,10 +84,7 @@
             android:checked="true"
             android:padding="5dp"
             android:text="@string/settings3"
-            android:textOff="@string/No"
-            android:textOn="@string/Yes"
             android:textSize="20sp"
-            app:showText="true"
             tools:ignore="InefficientWeight" />
 
         <Button

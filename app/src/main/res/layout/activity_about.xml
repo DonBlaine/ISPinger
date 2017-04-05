@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.ispinger.MainActivity">
+    tools:context="app.ispinger.About">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingLeft="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:paddingRight="16dp"
         android:orientation="vertical"
         android:background="@color/opaquewhite"
@@ -30,48 +32,16 @@
         android:layout_marginRight="8dp">
 
         <TextView
+            android:id="@+id/startTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Status"
+            android:text="@string/settings1"
             android:layout_gravity="center"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:textColor="@color/black"/>
 
-        <Button
-            android:id="@+id/button2"
-            android:onClick="turnOn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="150dp"
-            android:background="@drawable/redroundbutton"
-            android:padding="20dp"
-            android:text="@string/Off"
-            android:textSize="20sp" />
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="goSettings"
-            android:textSize="20sp"
-            android:background="@drawable/roundedbutton"
-            android:text="@string/Settings"
-            android:layout_marginBottom="10dp"
-            android:padding="20dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:onClick="goAbout"
-            android:background="@drawable/roundedbutton"
-            android:text="@string/about"
-            android:layout_marginBottom="10dp"
-            android:padding="20dp"/>
 
 
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>
