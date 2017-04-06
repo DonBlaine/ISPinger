@@ -12,6 +12,19 @@
     <string name="Off">OFF</string>
     <string name="about">About</string>
     <string name="goHome">Home</string>
-
+    <string name="about1">About This App</string>
+    <string name="textblock">
+        "\t" On Monday April 3rd, 2017 the President signed into law
+        a bill that would prevent existing internet privacy regulations
+        from continuing. This removes the restrictions blocking ISPs from
+        being able to gather and sell data about your browsing history.
+        Since I think this is a horrible idea, I have created this app.
+        While a VPN is the best option,the second best option is to pollute
+        your browsing data with false visits. Therefore you can use this app to
+        set a specific time range which during that time, this app will visit
+        random websites in the background resulting in false browsing history
+        data. It's unfortunate that it's come to this but it has. Please note
+        this will use your phone's data.
+    </string>
 
 </resources>

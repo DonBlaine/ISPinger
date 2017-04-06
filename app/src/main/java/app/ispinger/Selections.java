@@ -32,6 +32,7 @@ public class Selections extends AppCompatActivity {
         String startTime = sharedPref.getString("startTime", null);
         String stopTime = sharedPref.getString("stopTime", null);
         Boolean wifi = sharedPref.getBoolean("wifi", false);
+
         if(wifi){
             switchBtn.setChecked(true);
         }
@@ -50,7 +51,6 @@ public class Selections extends AppCompatActivity {
                 editor.putBoolean("wifi",isChecked);
                 editor.apply();
             }
-
         });
     }
 
@@ -64,23 +64,6 @@ public class Selections extends AppCompatActivity {
         flag = 1;
         TimePicker(flag);
     }
-
-//    public void switchChange(View v){
-//        SwitchCompat switchBtn = (SwitchCompat) findViewById(R.id.simpleSwitch);
-//        SharedPreferences sharedPref =
-//                getSharedPreferences("ispinger_sharedPreferences", Context.MODE_PRIVATE);
-//        SharedPreferences.Editor editor = sharedPref.edit();
-//
-//        if(switchBtn.isChecked()){
-//            editor.putBoolean("wifi",true);
-//            editor.apply();
-//            Log.d(TAG,"TEST1");
-//        } else{
-//            editor.putBoolean("wifi",false);
-//            editor.apply();
-//            Log.d(TAG,"TEST2");
-//        }
-//    }
 
     public void TimePicker(int flag){
         DialogFragment newFragment = new TimePickerFragment();

@@ -1,7 +1,5 @@
 package app.ispinger;
 
-
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -36,6 +34,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         int flag = getArguments().getInt("flag");
         String time= String.valueOf(hourOfDay) + ":" + String.valueOf(minute);
 
+        //use flag to identify if start or stop time btn was selected
         if (flag == 0){
             TextView startBtn = (TextView) getActivity().findViewById(R.id.startBtn);
             startBtn.setText(time);

@@ -1,6 +1,5 @@
 package app.ispinger;
 
-import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -13,9 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import static android.R.attr.start;
-import static app.ispinger.R.id.startTime;
-import static app.ispinger.R.id.stopTime;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,15 +21,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-//    public void startAlarm(){
-//        Boolean wifi = sharedPref.getBoolean("wifi", false);
-//        Boolean alarmOn = sharedPref.getBoolean("alarm", false);
-//        if (alarmOn & wifi) {
-//            Bundle bundle = new Bundle();
-//            // add extras here..
-//            AlarmReceiver alarm = new AlarmReceiver(this, bundle, 30);
-//        }
-//    }
+    public void startAlarm(){
+        //Boolean wifi = sharedPref.getBoolean("wifi", false);
+        //Boolean alarmOn = sharedPref.getBoolean("alarm", false);
+        Bundle bundle = new Bundle();
+        // add extras here..
+        AlarmReceiver alarm = new AlarmReceiver(this, bundle, 30);
+
+    }
+
+    public void stopAlarm(){
+        //                Intent intent = new Intent(this, AlarmReceive.class);
+//                PendingIntent sender = PendingIntent.getBroadcast(this, 0, intent, 0);
+//                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+//
+//                alarmManager.cancel(sender);
+    }
 
     public void turnOn(View v){
         SharedPreferences sharedPref =
@@ -44,29 +47,23 @@ public class MainActivity extends AppCompatActivity {
         String startTime = sharedPref.getString("startTime", null);
         String stopTime = sharedPref.getString("stopTime", null);
         Button alarm = (Button) findViewById(R.id.alarmBtn);
+
         if (startTime != null & stopTime != null){
             if (alarmOn){
                 editor.putBoolean("alarm",false);
                 editor.apply();
                 alarm.setText(R.string.Off);
-                final int sdk = Build.VERSION.SDK_INT;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     alarm.setBackground( getResources().getDrawable(R.drawable.redroundbutton));
                 }else{
                     alarm.setBackgroundDrawable( getResources().getDrawable(R.drawable.redroundbutton) );
                 }
 
-//                Intent intent = new Intent(this, AlarmReceive.class);
-//                PendingIntent sender = PendingIntent.getBroadcast(this, 0, intent, 0);
-//                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-//
-//                alarmManager.cancel(sender);
             }
             else{
                 editor.putBoolean("alarm",true);
                 editor.apply();
                 alarm.setText(R.string.On);
-                final int sdk = Build.VERSION.SDK_INT;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     alarm.setBackground( getResources().getDrawable(R.drawable.greenroundbutton));
                 }else{
