@@ -39,12 +39,16 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
             TextView startBtn = (TextView) getActivity().findViewById(R.id.startBtn);
             startBtn.setText(time);
             editor.putString("startTime",time);
+            editor.putString("startHour",String.valueOf(hourOfDay));
+            editor.putString("startMin",String.valueOf(minute));
             editor.apply();
 
         } else if (flag == 1){
             TextView stopBtn = (TextView) getActivity().findViewById(R.id.stopBtn);
             stopBtn.setText(time);
             editor.putString("stopTime",time);
+            editor.putString("stopHour",String.valueOf(hourOfDay));
+            editor.putString("stopMin",String.valueOf(minute));
             editor.apply();
         }
     }

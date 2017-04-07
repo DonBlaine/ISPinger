@@ -1,7 +1,6 @@
 package app.ispinger;
 
 import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,14 +18,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences sharedPref =
+                getSharedPreferences("ispinger_sharedPreferences", Context.MODE_PRIVATE);
+
+        Boolean alarmOn = sharedPref.getBoolean("alarm", false);
+        Button alarm = (Button) findViewById(R.id.alarmBtn);
+
+        if(alarmOn){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                alarm.setBackground( getResources().getDrawable(R.drawable.greenroundbutton));
+            }else{
+                alarm.setBackgroundDrawable( getResources().getDrawable(R.drawable.greenroundbutton) );
+            }
+        }
     }
 
     public void startAlarm(){
-        //Boolean wifi = sharedPref.getBoolean("wifi", false);
-        //Boolean alarmOn = sharedPref.getBoolean("alarm", false);
+        SharedPreferences sharedPref =
+                getSharedPreferences("ispinger_sharedPreferences", Context.MODE_PRIVATE);
+        Boolean wifi = sharedPref.getBoolean("wifi", false);
         Bundle bundle = new Bundle();
-        // add extras here..
-        AlarmReceiver alarm = new AlarmReceiver(this, bundle, 30);
+        bundle.putBoolean("wifi",wifi);
+        AlarmReceiver alarm = new AlarmReceiver(this, bundle);
 
     }
 
@@ -59,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     alarm.setBackgroundDrawable( getResources().getDrawable(R.drawable.redroundbutton) );
                 }
 
+                stopAlarm();
             }
             else{
                 editor.putBoolean("alarm",true);
@@ -69,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     alarm.setBackgroundDrawable( getResources().getDrawable(R.drawable.greenroundbutton) );
                 }
+
+                startAlarm();
             }
         } else{
             Toast.makeText(MainActivity.this, "Error: Please enter your settings to turn on feature.",
