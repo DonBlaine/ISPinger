@@ -7,7 +7,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Calendar;
 
@@ -59,6 +62,15 @@ public class AlarmReceiver extends BroadcastReceiver {
         long startTime = System.currentTimeMillis();
 
         //check if wifi before running task
+        NetworkInfo wifiCheck;
+        ConnectivityManager connectionManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        wifiCheck = connectionManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+        if (wifiCheck.isConnected()) {
+            // Do whatever here
+        }
+    }
+
 
         while( startTime + timePeriod >  System.currentTimeMillis()){
             Toast.makeText(context, "Alarm went off", Toast.LENGTH_SHORT).show();
